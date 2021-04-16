@@ -6,8 +6,6 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import fr.service.answer.data.Answer;
-import fr.service.answer.data.User;
 import fr.service.answer.data.UserAnswer;
 
 /**
@@ -16,6 +14,9 @@ import fr.service.answer.data.UserAnswer;
  */
 @Service
 public class HttpClientManager {
+
+    /** fake id. */
+    private final long fakeId = 0;
 
     /**
      * @author yannk
@@ -34,9 +35,27 @@ public class HttpClientManager {
 
         UserAnswer fakeUA = new UserAnswer();
         fakeUA.setId(userAnswerId);
-        fakeUA.setAnswer(new Answer());
+        fakeUA.setAnswerId(fakeId);
         // get Answer by id (http Request).
-        fakeUA.setUser(new User());
+        fakeUA.setUserId(fakeId);
+        // get User by id (http Request).
+        return Optional.of(fakeUA);
+    }
+
+    /**
+     * @param questionId
+     * @param userId
+     * @param greaterThan
+     * @return fakeUA
+     */
+    public Optional<UserAnswer> findTopByAnswerQuestionAndUserAndPointsNotNullAndPointsIsGreaterThanOrderByPoints(
+            final long questionId, final long userId, final int greaterThan) {
+        // Faire appel Http au serviceUser pour récupérer.
+        UserAnswer fakeUA = new UserAnswer();
+        fakeUA.setId(fakeId);
+        fakeUA.setAnswerId(fakeId);
+        // get Answer by id (http Request).
+        fakeUA.setUserId(fakeId);
         // get User by id (http Request).
         return Optional.of(fakeUA);
     }

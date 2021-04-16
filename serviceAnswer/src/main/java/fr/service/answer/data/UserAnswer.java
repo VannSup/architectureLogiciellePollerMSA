@@ -10,10 +10,10 @@ public class UserAnswer {
     private long id;
 
     /** User. */
-    private User user;
+    private long userId;
 
     /** Answer. */
-    private Answer answer;
+    private long answerId;
 
     /** Points taken by User. */
     private Integer points;
@@ -33,17 +33,17 @@ public class UserAnswer {
     }
 
     /**
-     * @return the user
+     * @return the userId
      */
-    public User getUser() {
-        return user;
+    public long getUserId() {
+        return userId;
     }
 
     /**
-     * @param theUser the user to set
+     * @param theUserId the userId to set
      */
-    public void setUser(final User theUser) {
-        this.user = theUser;
+    public void setUserId(final long theUserId) {
+        this.userId = theUserId;
     }
 
     /**
@@ -61,17 +61,17 @@ public class UserAnswer {
     }
 
     /**
-     * @return the answer
+     * @return the answerId
      */
-    public Answer getAnswer() {
-        return answer;
+    public long getAnswerId() {
+        return answerId;
     }
 
     /**
-     * @param theAnswer the answer to set
+     * @param theAnswerId the answerId to set
      */
-    public void setAnswer(final Answer theAnswer) {
-        this.answer = theAnswer;
+    public void setAnswerId(final long theAnswerId) {
+        this.answerId = theAnswerId;
     }
 
 }
